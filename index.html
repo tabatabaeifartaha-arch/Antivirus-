@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AegisGuard Antivirus</title>
+  <meta name="description" content="Modern antivirus scan interface with clean centered panel." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <button class="doc-toggle" id="openInfoBtn" aria-label="Open antivirus details">🧾</button>
+
+    <section class="scan-panel" id="mainPanel">
+      <div class="panel-top">
+        <div class="brand">
+          <div class="brand-icon">A</div>
+          <div>
+            <p class="mini-label">SMART ANTIVIRUS</p>
+            <h1>AegisGuard</h1>
+          </div>
+        </div>
+        <div class="live-status">Secure</div>
+      </div>
+
+      <div class="panel-center">
+        <div class="progress-wrap">
+          <div class="progress-circle" id="progressCircle">
+            <div class="progress-inner">
+              <span id="progressText">0%</span>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="scan-title">Deep File Scanner</h2>
+        <p class="scan-subtitle">
+          Select a file or folder, start the scan, and review suspicious results in a clean modern interface.
+        </p>
+
+        <div class="selector-card">
+          <label for="selectedPath">Selected path</label>
+          <input type="text" id="selectedPath" placeholder="No file selected yet" readonly />
+          <div class="action-row">
+            <button class="btn btn-secondary" id="chooseFileBtn">Choose File</button>
+            <button class="btn btn-secondary" id="chooseFolderBtn">Choose Folder</button>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" id="startScanBtn">Start Scan</button>
+
+        <div class="percent-line">
+          <span>Scan Progress</span>
+          <strong id="progressValue">0%</strong>
+        </div>
+
+        <div class="issues-card">
+          <div class="issues-head">
+            <span>Detected issues</span>
+            <span class="issues-count" id="issuesCount">0 item</span>
+          </div>
+
+          <ul class="issues-list" id="issuesList">
+            <li class="issue empty">No suspicious files detected yet.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-panel hidden" id="infoPanel">
+      <div class="info-top">
+        <h2>How this antivirus works</h2>
+        <button class="close-info" id="closeInfoBtn" aria-label="Close details">✕</button>
+      </div>
+
+      <div class="info-content">
+        <div class="info-block">
+          <h3>Overview</h3>
+          <p>
+            AegisGuard is designed to scan selected files and folders, show progress clearly,
+            and display suspicious items in an understandable list.
+          </p>
+        </div>
+
+        <div class="info-block">
+          <h3>How the scan works</h3>
+          <p>
+            The interface simulates a modern security scan flow: selection, scan start, progress
+            tracking, and issue reporting for user review.
+          </p>
+        </div>
+
+        <div class="info-block">
+          <h3>User control</h3>
+          <p>
+            The system is designed around visibility and user choice. Suspicious files can be shown
+            to the user instead of being removed automatically.
+          </p>
+        </div>
+
+        <div class="info-block">
+          <h3>Security design</h3>
+          <p>
+            The visual design focuses on clarity, readable status signals, and a trust-oriented
+            product experience with a dark professional interface.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <input type="file" id="filePicker" hidden />
+    <input type="file" id="folderPicker" webkitdirectory directory hidden />
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
